@@ -1,0 +1,21 @@
+<div class="list row">
+    <div class="col-md-6">
+      <h4>Tasks List</h4>
+      <ul class="list-group">
+        @for (task of tasks; track task.id; let i = $index) {
+        <li
+          class="list-group-item"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTask(task, i)"
+        >
+        Id: {{ task.id }}
+        Description: {{ task.description }}
+        </li>
+        }
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeById()">
+        Remove
+      </button>
+    </div>
+  </div>
