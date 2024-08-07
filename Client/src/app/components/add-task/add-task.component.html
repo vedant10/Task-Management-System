@@ -1,1 +1,37 @@
-
+<div>
+    <div class="submit-form">
+      @if (!submitted) {
+      <div class="form-group">
+        <label for="title">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="task.id"
+          name="title"
+        />
+      </div>
+      @if(showIdError) {
+        <div>Please enter valid Id.</div>
+      }
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="task.description"
+          name="description"
+        />
+      </div>
+      @if(showDescriptionError) {
+        <div>Please enter description.</div>
+      }
+      <button (click)="saveTask()" class="btn btn-success">Submit</button>
+      } @else {
+      <h4>Task was added successfully!</h4>
+      <button class="btn btn-success" (click)="newTask()">Add</button>
+      }
+    </div>
+  </div>
