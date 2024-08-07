@@ -1,6 +1,5 @@
 const db = require("../models");
 const Tutorial = db.tutorials;
-const Op = db.Sequelize.Op;
 const fs = require('fs');
 const path = require('path');
 
